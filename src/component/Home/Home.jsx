@@ -3,7 +3,9 @@ import "./Home.css"
 import Multitemcarousel from "./Multitemcarousel"
 import RestaurantCard from '../Restaurent/RestaurantCard'
 import Auth from '../Auth/Auth'
+import { useNavigate } from 'react-router-dom'
 
+const navigate = useNavigate();
 
 const restaurent = [
     1,1,1,1,1,1,1,1,1,1
@@ -37,7 +39,7 @@ const Home = () => {
         </h1>
         <div className='flex flex-wrap items-center justify-around gap-5'>
             {
-                restaurent.map((item)=><RestaurantCard/>)
+                restaurent.map((item)=><RestaurantCard onClick={()=>navigate(`/restaurent/${city}/${title}/${id}`)}/>)
             }
         </div>
     </section>
